@@ -6,5 +6,4 @@
 /.DS_Store
 /.classpath
 /.project
-/.MeePortalAutomation.iml
 /src/test/resources/config.properties

@@ -26,7 +26,7 @@ public class androidBrowser {
 
     String apiVersion = "5.1";
 
-    String url = "https://mee-test-useraccesscontrolmanager.ws.macmillaneducation.com/";
+    String url = "https://google.co.uk";
 
     @BeforeClass
     public void setUp() throws MalformedURLException{

@@ -60,10 +60,6 @@ public class AppiumAndroidStepdefs {
     public void iRegisterANewUserInTheMobileBrowser(String language) throws Throwable {
         WebElement registerButton = driver.findElement(By.xpath("//*[@data-reactid='.1.2.0.0']"));
         registerButton.click();
-//        WebElement languageSelector = driver.findElement(By.xpath("//*[@class='mee-select mee-purple-select']//*[@data-reactid = '.1.0']"));
-//        Select languageSelect = new Select(languageSelector);
-//        languageSelect.selectByValue(language);
-//  Selector not functioning on Android
     }
 
     @And("^I use a Country of \"([^\"]*)\" and a First Name of \"([^\"]*)\" and Surname of \"([^\"]*)\"$")
