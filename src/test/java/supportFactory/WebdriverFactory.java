@@ -1,17 +1,8 @@
 package supportFactory;
 
-import gherkin.lexer.Th;
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriverException;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import supportMethods.BrowserStack;
 import supportMethods.FileReader;
-import testRunner.TestRunner;
 import webDriver.Driver;
-
-import java.net.URL;
 
 public class WebdriverFactory {
 

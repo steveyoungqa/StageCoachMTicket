@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MeePortalAutomation.iml" filepath="$PROJECT_DIR$/MeePortalAutomation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Selenium-Cucumber-Framework.iml" filepath="$PROJECT_DIR$/Selenium-Cucumber-Framework.iml" />
     </modules>
   </component>
 </project>

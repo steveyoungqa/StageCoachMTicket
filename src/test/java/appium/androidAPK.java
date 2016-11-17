@@ -8,7 +8,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pageObject.LoginPage;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -69,7 +68,6 @@ public class androidAPK {
 //    @Test
     public void webTest() throws IOException {
 
-        LoginPage login = new LoginPage();
         driver.get("https://mee-test-useraccesscontrolmanager.ws.macmillaneducation.com/");
         WebElement registerButton = driver.findElement(By.xpath("//*[@data-reactid='.1.2.0.0']"));
         registerButton.click();
