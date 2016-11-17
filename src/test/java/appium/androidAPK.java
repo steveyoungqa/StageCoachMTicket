@@ -68,7 +68,7 @@ public class androidAPK {
 //    @Test
     public void webTest() throws IOException {
 
-        driver.get("https://mee-test-useraccesscontrolmanager.ws.macmillaneducation.com/");
+        driver.get("https://google.co.uk");
         WebElement registerButton = driver.findElement(By.xpath("//*[@data-reactid='.1.2.0.0']"));
         registerButton.click();
     }
