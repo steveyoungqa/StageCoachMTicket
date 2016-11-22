@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.Select;
+import pageObject.MTicket;
 import supportMethods.FileReader;
 
 import java.net.URL;
@@ -145,4 +146,27 @@ public class AppiumAndroidStepdefs {
 //        action2.sendKeys(Keys.COMMAND + "Q");
     }
 
+    @Then("^I validate the Virgin Trains Splash screen is displayed$")
+    public void iValidateTheVirginTrainsSplashScreenIsDisplayed() throws Throwable {
+        MTicket mticket = new MTicket();
+    }
+
+    @And("^I select the Skip button$")
+    public void iSelectTheSkipButton() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElement(By.id(String.valueOf((mticket.SkipButton())))).click();
+    }
+
+    @Then("^I select Buy Tickets$")
+    public void iSelectBuyTickets() throws Throwable {
+        MTicket mticket = new MTicket();
+//        driver.findElement(By.xpath(String.valueOf((mticket.BuyTickets())))).click();
+        driver.findElementByAccessibilityId("Buy tickets").click();
+    }
+
+    @And("^I select Help & Info$")
+    public void iSelectHelpInfo() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElement(By.linkText(String.valueOf((mticket.HelpInfo())))).click();
+    }
 }
