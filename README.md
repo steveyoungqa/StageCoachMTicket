@@ -38,13 +38,13 @@ Apache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-10T16:41:4
 
 Clone this Repo you are reading
 
-Open a Terminal: git clone https://github.com/steveyoungqa/cucumberJavaTemplate.git
+Open a Terminal: git clone https://github.com/steveyoungqa/appiumTemplate
 
 Run the Tests locally
 
 Open the cucumberJavaTemplate project in the IDE of your choice and open the jave folder and open the file TestRunner
 
-Right click on the file and choose Run TestRunner and a Chrome browser should open and run through the BBCFootball.feature file tests
+Right click on the file and choose Run TestRunner and a Chrome browser should open and run through the MTicket.feature file tests
 
 **PC:**
 
