@@ -1,4 +1,4 @@
-# Appium Templat - README Notes TODO
+# Appium Templat - README Notes (In Progress)
 
 **Selenium Cucumber Framework**
 
@@ -40,11 +40,10 @@ Clone this Repo you are reading
 
 Open a Terminal: git clone https://github.com/steveyoungqa/appiumTemplate
 
-Run the Tests locally
+Run the Tests locally follow this guide:
+https://docs.google.com/document/d/1UNCxCK6fSiHBlJemjlnP8FWPPu5iplV7sxVKPIm0uhA/edit?usp=sharing
 
-Open the cucumberJavaTemplate project in the IDE of your choice and open the jave folder and open the file TestRunner
 
-Right click on the file and choose Run TestRunner and a Chrome browser should open and run through the MTicket.feature file tests
 
 **PC:**
 
