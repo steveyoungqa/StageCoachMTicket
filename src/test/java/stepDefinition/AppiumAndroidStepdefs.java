@@ -15,11 +15,13 @@ import supportMethods.FileReader;
 
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
+import appium.RuntimeExec;
 
 
 public class AppiumAndroidStepdefs {
     AndroidDriver driver;
     DesiredCapabilities caps = new DesiredCapabilities();
+    RuntimeExec appiumObj = new RuntimeExec();
 
     @Given("^I am using Appium to run Mobile Browser automation tests for device \"([^\"]*)\" and Android version \"([^\"]*)\"$")
     public void iAmUsingAppiumToRunAutomationTestsForDevice(String device, String version) throws Throwable {
@@ -33,10 +35,11 @@ public class AppiumAndroidStepdefs {
 
     @Given("^I am using Appium to run APK automation tests for device \"([^\"]*)\" and Android version \"([^\"]*)\"$")
     public void iAmUsingAppiumToRunAPKAutomationTestsForDeviceAndAndroidVersion(String device, String version) throws Throwable {
-        DesiredCapabilities caps = new DesiredCapabilities();
+        //DesiredCapabilities caps = new DesiredCapabilities();
+        appiumObj.startAppium("appium --address 127.0.0.1");
         caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, version);
         caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-        caps.setCapability(MobileCapabilityType.DEVICE_NAME,device);
+        caps.setCapability(MobileCapabilityType.DEVICE_NAME, device);
         caps.setCapability("avd",device);
     }
 
@@ -155,6 +158,7 @@ public class AppiumAndroidStepdefs {
     public void iSelectTheSkipButton() throws Throwable {
         MTicket mticket = new MTicket();
         driver.findElement(By.id(String.valueOf((mticket.SkipButton())))).click();
+        //RuntimeExec.stopAppium();
     }
 
     @Then("^I select Buy Tickets$")
