@@ -7,7 +7,10 @@ Feature: Debug
     Then I launch the App on the Device
     Then I validate the Virgin Trains Splash screen is displayed
     And I select the Skip button
-    Then I select Buy Tickets
+#    And I select the Login button
+    Then I select to Open the Hamburger Menu
+    Then I select to Close the Hamburger Menu
+#    Then I select Buy Tickets
 #    And I select Help & Info
 
     Examples:

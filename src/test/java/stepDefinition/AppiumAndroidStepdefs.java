@@ -1,5 +1,6 @@
 package stepDefinition;
 
+import appium.RuntimeExec;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -9,13 +10,11 @@ import org.apache.commons.lang.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.Select;
 import pageObject.MTicket;
 import supportMethods.FileReader;
 
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-import appium.RuntimeExec;
 
 
 public class AppiumAndroidStepdefs {
@@ -60,47 +59,6 @@ public class AppiumAndroidStepdefs {
         driver.get(url);
     }
 
-    @Then("^I register a new user in the mobile browser in language \"([^\"]*)\"$")
-    public void iRegisterANewUserInTheMobileBrowser(String language) throws Throwable {
-        WebElement registerButton = driver.findElement(By.xpath("//*[@data-reactid='.1.2.0.0']"));
-        registerButton.click();
-    }
-
-    @And("^I use a Country of \"([^\"]*)\" and a First Name of \"([^\"]*)\" and Surname of \"([^\"]*)\"$")
-    public void iUseALanguageOfFirstnameSurname(String country, String first, String last) throws Throwable {
-        WebElement countrySelector = driver.findElement(By.xpath("//*[@data-flux-key='countryOfResidence']"));
-        Select countrySelect = new Select(countrySelector);
-        countrySelect.selectByValue(country);
-        WebElement firstName = driver.findElement(By.id("_FirstName"));
-        firstName.clear();
-        firstName.sendKeys(first);
-        WebElement surname = driver.findElement(By.id("_LastName"));
-        surname.clear();
-        surname.sendKeys(last);
-        FileReader.addData("firstName", first);
-        FileReader.addData("surname", last);
-        FileReader.addData("country", country);
-    }
-
-
-    @Then("^use a date of birth of \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
-    public void useADateOfBirthOf(String day, String month, String year) throws Throwable {
-        WebElement daySelect = driver.findElement(By.xpath("//*[@id='_DateOfBirth_Day']"));
-        Select dayValue = new Select(daySelect);
-        dayValue.selectByValue(day);
-
-        WebElement monthSelect = driver.findElement(By.xpath("//*[@id='_DateOfBirth_Month']"));
-        Select monthValue = new Select(monthSelect);
-        monthValue.selectByValue(month);
-
-        WebElement yearSelect = driver.findElement(By.xpath("//*[@id='_DateOfBirth_Year']"));
-        Select yearValue = new Select(yearSelect);
-        yearValue.selectByValue(year);
-        FileReader.addData("dayOfBirth", day);
-        FileReader.addData("monthOfBirth", month);
-        FileReader.addData("yearOfBirth", year);
-
-    }
     @Then("^I use a unique Gmail email address$")
     public void iUseAUniqueGmailEmailAddress() throws Throwable {
         String email = "springertester" + "+" + RandomStringUtils.randomAlphabetic(3) + RandomStringUtils.randomNumeric(2) + "Appium@gmail.com";
@@ -119,19 +77,6 @@ public class AppiumAndroidStepdefs {
         emailElement.sendKeys(emailConfirm);
     }
 
-    @Then("^select the Terms & Conditions checkbox$")
-    public void selectTheTermsConditionsCheckbox() throws Throwable {
-        WebElement termsBox = driver.findElement(By.id("_AgreeToTermsOfUse"));
-        termsBox.click();
-    }
-
-    @And("^I use the Submit button$")
-    public void iUseTheSubmitButton() throws Throwable {
-        WebElement submit = driver.findElement(By.id("_submitBtn"));
-        submit.click();
-    }
-
-
     @And("^I run some Example Tests$")
     public void iRunSomeExampleTests() throws Throwable {
         WebElement planner=driver.findElement(By.id("uk.co.nationalrail.google:id/journeyPlannerTabButton"));
@@ -139,7 +84,6 @@ public class AppiumAndroidStepdefs {
         WebElement stationFrom=driver.findElement(By.id("uk.co.nationalrail.google:id/stationFrom"));
         stationFrom.click();
     }
-
 
     @And("^I close the Mobile Browser$")
     public void iCloseTheMobileBrowser() throws Throwable {
@@ -152,6 +96,13 @@ public class AppiumAndroidStepdefs {
     @Then("^I validate the Virgin Trains Splash screen is displayed$")
     public void iValidateTheVirginTrainsSplashScreenIsDisplayed() throws Throwable {
         MTicket mticket = new MTicket();
+        //TO DO
+    }
+
+    @And("^I select the Login button$")
+    public void iSelectTheLoginButton() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElement(By.id(String.valueOf((mticket.LoginButton())))).click();
     }
 
     @And("^I select the Skip button$")
@@ -164,13 +115,25 @@ public class AppiumAndroidStepdefs {
     @Then("^I select Buy Tickets$")
     public void iSelectBuyTickets() throws Throwable {
         MTicket mticket = new MTicket();
-//        driver.findElement(By.xpath(String.valueOf((mticket.BuyTickets())))).click();
-        driver.findElementByAccessibilityId("Buy tickets").click();
+        driver.findElementByAccessibilityId(mticket.BuyTickets()).click();
+//        driver.findElementByAccessibilityId("Buy tickets").click();
     }
 
     @And("^I select Help & Info$")
     public void iSelectHelpInfo() throws Throwable {
         MTicket mticket = new MTicket();
         driver.findElement(By.linkText(String.valueOf((mticket.HelpInfo())))).click();
+    }
+
+    @Then("^I select to Open the Hamburger Menu$")
+    public void iSelectToOpenTheHamburgerMenu() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElementByAccessibilityId(mticket.HamburgerMenu()).click();
+    }
+
+    @Then("^I select to Close the Hamburger Menu$")
+    public void iSelectToCloseTheHamburgerMenu() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElementByAccessibilityId(mticket.CloseHamburgerMenu()).click();
     }
 }
