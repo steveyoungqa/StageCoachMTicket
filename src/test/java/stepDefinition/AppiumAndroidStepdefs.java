@@ -5,6 +5,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidKeyCode;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.apache.commons.lang.RandomStringUtils;
 import org.openqa.selenium.By;
@@ -34,7 +35,6 @@ public class AppiumAndroidStepdefs {
 
     @Given("^I am using Appium to run APK automation tests for device \"([^\"]*)\" and Android version \"([^\"]*)\"$")
     public void iAmUsingAppiumToRunAPKAutomationTestsForDeviceAndAndroidVersion(String device, String version) throws Throwable {
-        //DesiredCapabilities caps = new DesiredCapabilities();
         appiumObj.startAppium("appium --address 127.0.0.1");
         caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, version);
         caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
@@ -45,7 +45,6 @@ public class AppiumAndroidStepdefs {
     @And("^I am using the \"([^\"]*)\" local path$")
     public void iAmUsingTheLocalPath(String apk) throws Throwable {
         caps.setCapability(MobileCapabilityType.APP, apk);
-
     }
 
     @Then("^I launch the App on the Device$")
@@ -61,7 +60,7 @@ public class AppiumAndroidStepdefs {
 
     @Then("^I use a unique Gmail email address$")
     public void iUseAUniqueGmailEmailAddress() throws Throwable {
-        String email = "springertester" + "+" + RandomStringUtils.randomAlphabetic(3) + RandomStringUtils.randomNumeric(2) + "Appium@gmail.com";
+        String email = "tester" + "+" + RandomStringUtils.randomAlphabetic(3) + RandomStringUtils.randomNumeric(2) + "Appium@gmail.com";
         FileReader.addData("uniqueEmailAddress", email);
 
         WebElement emailElement = driver.findElement(By.id("_EmailAddress"));
@@ -109,20 +108,30 @@ public class AppiumAndroidStepdefs {
     public void iSelectTheSkipButton() throws Throwable {
         MTicket mticket = new MTicket();
         driver.findElement(By.id(String.valueOf((mticket.SkipButton())))).click();
-        //RuntimeExec.stopAppium();
     }
 
     @Then("^I select Buy Tickets$")
     public void iSelectBuyTickets() throws Throwable {
         MTicket mticket = new MTicket();
-        driver.findElementByAccessibilityId(mticket.BuyTickets()).click();
-//        driver.findElementByAccessibilityId("Buy tickets").click();
+        driver.findElement(By.id(String.valueOf(mticket.BuyTickets()))).click();
+    }
+
+    @And("^I select Ticket Wallet$")
+    public void iSelectTicketWallet() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElement(By.id(String.valueOf(mticket.TicketWallet()))).click();
+    }
+
+    @And("^I select My Account$")
+    public void iSelectMyAccount() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElement(By.id(String.valueOf(mticket.MyAccount()))).click();
     }
 
     @And("^I select Help & Info$")
     public void iSelectHelpInfo() throws Throwable {
         MTicket mticket = new MTicket();
-        driver.findElement(By.linkText(String.valueOf((mticket.HelpInfo())))).click();
+        driver.findElement(By.id(String.valueOf(mticket.HelpInfo()))).click();
     }
 
     @Then("^I select to Open the Hamburger Menu$")
@@ -135,5 +144,107 @@ public class AppiumAndroidStepdefs {
     public void iSelectToCloseTheHamburgerMenu() throws Throwable {
         MTicket mticket = new MTicket();
         driver.findElementByAccessibilityId(mticket.CloseHamburgerMenu()).click();
+    }
+
+    @And("^I select Settings from the Menu$")
+    public void iSelectSettingsFromTheMenu() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElement(By.id(String.valueOf(mticket.Settings()))).click();
+    }
+
+    @And("^I select the Back button on the device$")
+    public void iSelectTheBackButtonOnTheDevice() throws Throwable {
+        Thread.sleep(5000);
+        driver.sendKeyEvent(AndroidKeyCode.BACK);
+    }
+
+    @And("^I select Passenger Charter from the Menu$")
+    public void iSelectPassengerCharterFromTheMenu() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElement(By.id(String.valueOf(mticket.PassengerCharter()))).click();
+    }
+
+    @And("^I select Live Travel Updates from the Menu$")
+    public void iSelectLiveTravelUpdatesFromTheMenu() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElement(By.id(String.valueOf(mticket.LiveTravelUpdate()))).click();
+    }
+
+    @And("^I select How busy is my train from the Menu$")
+    public void iSelectHowBusyIsMyTrainFromTheMenu() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElement(By.id(String.valueOf(mticket.HowBusyIsMyTrain()))).click();
+    }
+
+    @And("^I select Journey Planner from the Menu$")
+    public void iSelectJourneyPlannerFromTheMenu() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElement(By.id(String.valueOf(mticket.JourneyPlanner()))).click();
+    }
+
+    @And("^I select Help from the Menu$")
+    public void iSelectHelpFromTheMenu() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElement(By.id(String.valueOf(mticket.HelpFromMenu()))).click();
+    }
+
+    @And("^I select Feedback from the Menu$")
+    public void iSelectFeedbackFromTheMenu() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElement(By.id(String.valueOf(mticket.Feedback()))).click();
+    }
+
+    @And("^I select Delay Repay from the Menu$")
+    public void iSelectDelayRepayFromTheMenu() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElement(By.id(String.valueOf(mticket.DelayRepay()))).click();
+    }
+
+    @And("^I select Live Train Times from the Menu$")
+    public void iSelectLiveTrainTimesFromTheMenu() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElement(By.id(String.valueOf(mticket.LiveTrainTimes()))).click();
+    }
+
+    @And("^I select About from the Menu$")
+    public void iSelectAboutFromTheMenu() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElement(By.id(String.valueOf(mticket.About()))).click();
+    }
+
+    @And("^I select Social Hub from the Menu$")
+    public void iSelectSocialHubFromTheMenu() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElement(By.id(String.valueOf(mticket.SociaHub()))).click();
+    }
+
+    @And("^I select Download Beam App from the Menu$")
+    public void iSelectDownloadBeamAppFromTheMenu() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElement(By.id(String.valueOf(mticket.DownloadBeamApp()))).click();
+    }
+
+    @Then("^I select the How do I activate and use my m-ticket link$")
+    public void iSelectTheHowDoIActivateAndUseMyMTicketLink() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElement(By.id(String.valueOf(mticket.HelpActivate()))).click();
+    }
+
+    @Then("^I select the Where do I find my m-ticket link$")
+    public void iSelectTheWhereDoIFindMyMTicketLink() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElement(By.id(String.valueOf(mticket.HelpWhereMTicket()))).click();
+    }
+
+    @Then("^I select the What Journey/ticket types are available link$")
+    public void iSelectTheWhatJourneyTicketTypesAreAvailableLink() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElement(By.id(String.valueOf(mticket.HelpWhatJourneyTypes()))).click();
+    }
+
+    @Then("^I select the How do I transfer my m-ticket to another device link$")
+    public void iSelectTheHowDoITransferMyMTicketToAnotherDeviceLink() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElement(By.id(String.valueOf(mticket.HelpTransfer()))).click();
     }
 }

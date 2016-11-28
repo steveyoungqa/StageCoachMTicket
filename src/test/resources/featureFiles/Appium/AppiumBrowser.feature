@@ -4,12 +4,6 @@ Feature: Debug
   Scenario Outline: Register a New User on a Mobile Device (Chrome)
     Given I am using Appium to run Mobile Browser automation tests for device "<Device>" and Android version "<Version>"
     And I am using the "<Url>" url for the mobile browser
-    Then I register a new user in the mobile browser in language "<Language>"
-    And I use a Country of "<Country>" and a First Name of "<Firstname>" and Surname of "<Surname>"
-    Then use a date of birth of "<day>" "<month>" "<year>"
-    Then I use a unique Gmail email address
-    And I use a confirmation of the unique Gmail email address
-    Then select the Terms & Conditions checkbox
     And I close the Mobile Browser
 
 

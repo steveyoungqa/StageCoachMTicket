@@ -34,11 +34,84 @@ public class MTicket {
     }
 
     public String BuyTickets() throws IOException {
-        return ("Buy tickets");
+        return ("sh.dogfi.mticket:id/layoutBuyTickets");
+    }
+
+    public String TicketWallet() throws IOException {
+        return ("sh.dogfi.mticket:id/layoutTicketWallet");
+    }
+
+    public String MyAccount() throws IOException {
+        return ("sh.dogfi.mticket:id/layoutMyAccount");
     }
 
     public String HelpInfo() throws IOException {
-        return ("Help + Info");
+        return ("sh.dogfi.mticket:id/layoutHelpInfo");
     }
+
+    public String Settings() throws IOException {
+        return ("AWAITING RESOURCE-ID");
+    }
+
+    public String PassengerCharter() throws IOException {
+        return ("AWAITING RESOURCE-ID");
+    }
+
+    public String LiveTravelUpdate() throws IOException {
+        return ("AWAITING RESOURCE-ID");
+    }
+
+    public String HowBusyIsMyTrain() throws IOException {
+        return ("AWAITING RESOURCE-ID");
+    }
+
+    public String JourneyPlanner() throws IOException {
+        return ("AWAITING RESOURCE-ID");
+    }
+
+    public String HelpFromMenu() throws IOException {
+        return ("AWAITING RESOURCE-ID");
+    }
+
+    public String Feedback() throws IOException {
+        return ("AWAITING RESOURCE-ID");
+    }
+
+    public String DelayRepay() throws IOException {
+        return ("AWAITING RESOURCE-ID");
+    }
+
+    public String LiveTrainTimes() throws IOException {
+        return ("AWAITING RESOURCE-ID");
+    }
+
+    public String About() throws IOException {
+        return ("AWAITING RESOURCE-ID");
+    }
+
+    public String SociaHub() throws IOException {
+        return ("AWAITING RESOURCE-ID");
+    }
+
+    public String DownloadBeamApp() throws IOException {
+        return ("AWAITING RESOURCE-ID");
+    }
+
+    public String HelpActivate() throws IOException {
+        return ("AWAITING RESOURCE-ID");
+    }
+
+    public String HelpWhereMTicket() throws IOException {
+        return ("AWAITING RESOURCE-ID");
+    }
+
+    public String HelpWhatJourneyTypes() throws IOException {
+        return ("AWAITING RESOURCE-ID");
+    }
+
+    public String HelpTransfer() throws IOException {
+        return ("AWAITING RESOURCE-ID");
+    }
+
 
 }
