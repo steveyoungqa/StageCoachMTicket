@@ -161,7 +161,8 @@ public class AppiumAndroidStepdefs {
     @And("^I select Passenger Charter from the Menu$")
     public void iSelectPassengerCharterFromTheMenu() throws Throwable {
         MTicket mticket = new MTicket();
-        driver.findElement(By.id(String.valueOf(mticket.PassengerCharter()))).click();
+        Thread.sleep(5000);
+        driver.findElement(By.xpath(String.valueOf(mticket.PassengerCharter()))).click();
     }
 
     @And("^I select Live Travel Updates from the Menu$")
@@ -246,5 +247,10 @@ public class AppiumAndroidStepdefs {
     public void iSelectTheHowDoITransferMyMTicketToAnotherDeviceLink() throws Throwable {
         MTicket mticket = new MTicket();
         driver.findElement(By.id(String.valueOf(mticket.HelpTransfer()))).click();
+    }
+
+    @And("^permission to allow Notifications pop-up for IOS is displayed$")
+    public void permissionToAllowNotificationsPopUpForIOSIsDisplayed() throws Throwable {
+       //TO DO
     }
 }

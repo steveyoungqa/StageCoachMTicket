@@ -54,7 +54,7 @@ public class MTicket {
     }
 
     public String PassengerCharter() throws IOException {
-        return ("AWAITING RESOURCE-ID");
+        return ("//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout[1]/android.support.v7.widget.RecyclerView[1]/android.widget.TextView[2]");
     }
 
     public String LiveTravelUpdate() throws IOException {

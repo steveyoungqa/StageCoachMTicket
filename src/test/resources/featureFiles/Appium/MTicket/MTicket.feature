@@ -10,9 +10,9 @@ Feature: Debug
 
     And I select the Skip button
 #    And I select the Login button
-#    Then I select to Open the Hamburger Menu
+    Then I select to Open the Hamburger Menu
 
-#    And I select Passenger Charter from the Menu
+    And I select Passenger Charter from the Menu
 #    And I select Live Travel Updates from the Menu
 #    And I select How busy is my train from the Menu
 #    And I select Journey Planner from the Menu
@@ -27,12 +27,12 @@ Feature: Debug
 
 #    Then I select to Close the Hamburger Menu
 
-    Then I select Buy Tickets
-    And I select the Back button on the device
-    And I select Ticket Wallet
-    And I select My Account
-    And I select the Back button on the device
-    And I select Help & Info
+#    Then I select Buy Tickets
+#    And I select the Back button on the device
+#    And I select Ticket Wallet
+#    And I select My Account
+#    And I select the Back button on the device
+#    And I select Help & Info
 
 #    Then I select the How do I activate and use my m-ticket link
 #    Then I select the Where do I find my m-ticket link
