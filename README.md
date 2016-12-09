@@ -1,4 +1,4 @@
-# Appium Templat - README Notes (In Progress)
+# Appium M-Ticket README Notes (In Progress)
 
 **Selenium Cucumber Framework**
 
@@ -38,7 +38,7 @@ Apache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-10T16:41:4
 
 Clone this Repo you are reading
 
-Open a Terminal: git clone https://github.com/steveyoungqa/appiumTemplate
+Open a Terminal: git clone https://bitbucket.org/dogfish/stagecoach-mticket-automation
 
 Run the Tests locally follow this guide:
 https://docs.google.com/document/d/1UNCxCK6fSiHBlJemjlnP8FWPPu5iplV7sxVKPIm0uhA/edit?usp=sharing

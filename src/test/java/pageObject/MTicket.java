@@ -6,7 +6,7 @@ import java.io.IOException;
 public class MTicket {
 
     public String EmailAddress() throws IOException {
-        return ("sh.dogfi.mticket:id/editEmailInternal");
+        return ("sh.dogfi.mticket:id/editEmail");
     }
 
     public String Password() throws IOException {
@@ -23,6 +23,10 @@ public class MTicket {
 
     public String LoginButton() throws IOException {
         return ("sh.dogfi.mticket:id/btnLogin");
+    }
+
+    public String RegisterButton() throws IOException {
+        return ("sh.dogfi.mticket:id/btnRegister");
     }
 
     public String HamburgerMenu() throws IOException {
@@ -49,32 +53,36 @@ public class MTicket {
         return ("sh.dogfi.mticket:id/layoutHelpInfo");
     }
 
-    public String Settings() throws IOException {
-        return ("AWAITING RESOURCE-ID");
+    public String Home() throws IOException {
+        return ("Home");
     }
 
     public String PassengerCharter() throws IOException {
-        return ("//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout[1]/android.support.v7.widget.RecyclerView[1]/android.widget.TextView[2]");
+        return ("Passenger Charter");
     }
 
     public String LiveTravelUpdate() throws IOException {
-        return ("AWAITING RESOURCE-ID");
+        return ("Live Travel Updates");
     }
 
     public String HowBusyIsMyTrain() throws IOException {
-        return ("AWAITING RESOURCE-ID");
+        return ("How busy is my train?");
     }
 
     public String JourneyPlanner() throws IOException {
-        return ("AWAITING RESOURCE-ID");
+        return ("Journey Planning");
+    }
+
+    public String Settings() throws IOException {
+        return ("Settings");
     }
 
     public String HelpFromMenu() throws IOException {
-        return ("AWAITING RESOURCE-ID");
+        return ("Help");
     }
 
     public String Feedback() throws IOException {
-        return ("AWAITING RESOURCE-ID");
+        return ("Feedback");
     }
 
     public String DelayRepay() throws IOException {
@@ -82,35 +90,55 @@ public class MTicket {
     }
 
     public String LiveTrainTimes() throws IOException {
-        return ("AWAITING RESOURCE-ID");
+        return ("Live Departures/Arrivals");
     }
 
     public String About() throws IOException {
-        return ("AWAITING RESOURCE-ID");
+        return ("About");
     }
 
     public String SociaHub() throws IOException {
-        return ("AWAITING RESOURCE-ID");
+        return ("Social Hub");
     }
 
     public String DownloadBeamApp() throws IOException {
-        return ("AWAITING RESOURCE-ID");
+        return ("Download Beam App");
     }
 
     public String HelpActivate() throws IOException {
-        return ("AWAITING RESOURCE-ID");
+        return ("How do I activate and use my m-ticket?");
     }
 
     public String HelpWhereMTicket() throws IOException {
-        return ("AWAITING RESOURCE-ID");
+        return ("Where do I find my m-ticket?");
     }
 
     public String HelpWhatJourneyTypes() throws IOException {
-        return ("AWAITING RESOURCE-ID");
+        return ("What journey/ticket types are available?");
     }
 
     public String HelpTransfer() throws IOException {
-        return ("AWAITING RESOURCE-ID");
+        return ("How do I transfer my m-ticket to another device?");
+    }
+
+    public String Test() throws IOException {
+        return ("Test");
+    }
+
+    public String xpath() throws IOException {
+        return ("//*[contains(text(), 'BUY TICKETS')]");
+    }
+
+    public String logOut() throws IOException {
+        return ("//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout[1]/android.widget.FrameLayout[1]/android.support.v7.widget.RecyclerView[1]/android.widget.TextView[1]");
+    }
+
+    public String logOutConfirm () throws IOException {
+        return ("android:id/button1");
+    }
+
+    public String cancelConfirm () throws IOException {
+        return ("android:id/button2");
     }
 
 

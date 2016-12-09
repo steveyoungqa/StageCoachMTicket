@@ -1,6 +1,7 @@
 package stepDefinition;
 
 import appium.RuntimeExec;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -62,7 +63,6 @@ public class AppiumAndroidStepdefs {
     public void iUseAUniqueGmailEmailAddress() throws Throwable {
         String email = "tester" + "+" + RandomStringUtils.randomAlphabetic(3) + RandomStringUtils.randomNumeric(2) + "Appium@gmail.com";
         FileReader.addData("uniqueEmailAddress", email);
-
         WebElement emailElement = driver.findElement(By.id("_EmailAddress"));
         emailElement.clear();
         emailElement.sendKeys(email);
@@ -102,6 +102,39 @@ public class AppiumAndroidStepdefs {
     public void iSelectTheLoginButton() throws Throwable {
         MTicket mticket = new MTicket();
         driver.findElement(By.id(String.valueOf((mticket.LoginButton())))).click();
+    }
+
+    @Then("^I enter an Email address of \"([^\"]*)\"$")
+    public void iEnterAnEmailAddressOf(String email) throws Throwable {
+        MTicket mticket = new MTicket();
+//        driver.findElement(By.id(String.valueOf((mticket.EmailAddress())))).clear();
+        Thread.sleep(1000);
+        driver.findElement(By.id(String.valueOf((mticket.EmailAddress())))).sendKeys(email);
+        driver.hideKeyboard();
+    }
+
+    @And("^I enter a Password of \"([^\"]*)\"$")
+    public void iEnterAPasswordOf(String password) throws Throwable {
+        MTicket mticket = new MTicket();
+//        driver.findElement(By.id(String.valueOf((mticket.Password())))).clear();
+        Thread.sleep(1000);
+        driver.findElement(By.id(String.valueOf((mticket.Password())))).sendKeys(password);
+        driver.hideKeyboard();
+    }
+
+    @Then("^I enter a Device Name of \"([^\"]*)\"$")
+    public void iEnterADeviceNameOf(String deviceName) throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElement(By.id(String.valueOf((mticket.DeviceName())))).clear();
+        Thread.sleep(1000);
+        driver.findElement(By.id(String.valueOf((mticket.DeviceName())))).sendKeys(deviceName);
+        driver.hideKeyboard();
+    }
+
+    @Then("^I select Register$")
+    public void iSelectRegister() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElement(By.id(String.valueOf((mticket.RegisterButton())))).click();
     }
 
     @And("^I select the Skip button$")
@@ -149,7 +182,7 @@ public class AppiumAndroidStepdefs {
     @And("^I select Settings from the Menu$")
     public void iSelectSettingsFromTheMenu() throws Throwable {
         MTicket mticket = new MTicket();
-        driver.findElement(By.id(String.valueOf(mticket.Settings()))).click();
+        driver.findElementByAccessibilityId(mticket.Settings()).click();
     }
 
     @And("^I select the Back button on the device$")
@@ -158,11 +191,17 @@ public class AppiumAndroidStepdefs {
         driver.sendKeyEvent(AndroidKeyCode.BACK);
     }
 
+    @And("^I select Home from the Menu$")
+    public void iSelectHomeFromTheMenu() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElementByAccessibilityId(mticket.Home()).click();
+    }
+
     @And("^I select Passenger Charter from the Menu$")
     public void iSelectPassengerCharterFromTheMenu() throws Throwable {
         MTicket mticket = new MTicket();
         Thread.sleep(5000);
-        driver.findElement(By.xpath(String.valueOf(mticket.PassengerCharter()))).click();
+        driver.findElementByAccessibilityId(mticket.PassengerCharter()).click();
     }
 
     @And("^I select Live Travel Updates from the Menu$")
@@ -252,5 +291,30 @@ public class AppiumAndroidStepdefs {
     @And("^permission to allow Notifications pop-up for IOS is displayed$")
     public void permissionToAllowNotificationsPopUpForIOSIsDisplayed() throws Throwable {
        //TO DO
+    }
+
+    @And("^xpath example$")
+    public void xpath() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElement(By.xpath(String.valueOf((mticket.xpath())))).click();
+    }
+
+    @Then("^I select the LogOut button$")
+    public void iSelectTheLogOutButton() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElement(By.xpath(String.valueOf((mticket.logOut())))).click();
+        Thread.sleep(3000);
+    }
+
+    @And("^I confirm to LogOut$")
+    public void iConfirmToLogOut() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElement(By.id(String.valueOf((mticket.logOutConfirm())))).click();
+    }
+
+    @And("^I confirm to Cancel$")
+    public void iConfirmToCancel() throws Throwable {
+        MTicket mticket = new MTicket();
+        driver.findElement(By.id(String.valueOf((mticket.cancelConfirm())))).click();
     }
 }
