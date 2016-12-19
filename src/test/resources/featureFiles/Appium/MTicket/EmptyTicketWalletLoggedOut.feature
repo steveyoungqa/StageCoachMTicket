@@ -1,7 +1,7 @@
 @emptyWalletLogOut
-Feature: Settings Page -Logged out User Jira SMT-151
+Feature: Non logged in user empty ticket wallet state screen Jira SMT-144
 
-  Scenario Outline: Register a New User on a Mobile Device (Chrome)
+  Scenario Outline: Open app, Skip Login, Enter Wallet
     Given I am using Appium to run APK automation tests for device "<Device>" and Android version "<Version>"
     And I am using the "<APK>" local path
     Then I launch the App on the Device

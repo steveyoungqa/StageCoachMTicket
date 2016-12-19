@@ -1,7 +1,7 @@
 @settingsLogOut
 Feature: Settings Page -Logged out User Jira SMT-151
 
-  Scenario Outline: Register a New User on a Mobile Device (Chrome)
+  Scenario Outline: Enter Settings page Logged Out state
     Given I am using Appium to run APK automation tests for device "<Device>" and Android version "<Version>"
     And I am using the "<APK>" local path
     Then I launch the App on the Device

@@ -1,7 +1,7 @@
 @mTicket
 Feature: Login page (2.a / 2.b) - skip Jira SMT-91
 
-  Scenario Outline: Register a New User on a Mobile Device (Chrome)
+  Scenario Outline: Open app but Skip Login
     Given I am using Appium to run APK automation tests for device "<Device>" and Android version "<Version>"
     And I am using the "<APK>" local path
     Then I launch the App on the Device
