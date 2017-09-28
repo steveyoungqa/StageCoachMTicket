@@ -37,10 +37,15 @@ public class AppiumAndroidStepdefs {
     @Given("^I am using Appium to run APK automation tests for device \"([^\"]*)\" and Android version \"([^\"]*)\"$")
     public void iAmUsingAppiumToRunAPKAutomationTestsForDeviceAndAndroidVersion(String device, String version) throws Throwable {
         appiumObj.startAppium("appium --address 127.0.0.1");
+        caps.setCapability(MobileCapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
+        caps.setCapability("noReset", false);
+        caps.setCapability("fullReset", true);
+        
         caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, version);
         caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
         caps.setCapability(MobileCapabilityType.DEVICE_NAME, device);
         caps.setCapability("avd",device);
+
     }
 
     @And("^I am using the \"([^\"]*)\" local path$")
@@ -125,9 +130,20 @@ public class AppiumAndroidStepdefs {
     @Then("^I enter a Device Name of \"([^\"]*)\"$")
     public void iEnterADeviceNameOf(String deviceName) throws Throwable {
         MTicket mticket = new MTicket();
+        String uniqueDeviceName = RandomStringUtils.randomAlphabetic(6);
         driver.findElement(By.id(String.valueOf((mticket.DeviceName())))).clear();
         Thread.sleep(1000);
         driver.findElement(By.id(String.valueOf((mticket.DeviceName())))).sendKeys(deviceName);
+        driver.hideKeyboard();
+    }
+
+    @Then("^I enter a Unique Device Name of \"([^\"]*)\"$")
+    public void iEnterAUniqueDeviceNameOf(String deviceName) throws Throwable {
+        MTicket mticket = new MTicket();
+        String uniqueDeviceName = RandomStringUtils.randomAlphabetic(6);
+        driver.findElement(By.id(String.valueOf((mticket.DeviceName())))).clear();
+        Thread.sleep(1000);
+        driver.findElement(By.id(String.valueOf((mticket.DeviceName())))).sendKeys(deviceName + uniqueDeviceName);
         driver.hideKeyboard();
     }
 
@@ -182,7 +198,7 @@ public class AppiumAndroidStepdefs {
     @And("^I select Settings from the Menu$")
     public void iSelectSettingsFromTheMenu() throws Throwable {
         MTicket mticket = new MTicket();
-        driver.findElementByAccessibilityId(mticket.Settings()).click();
+        driver.findElement(By.id(String.valueOf(mticket.Settings()))).click();
     }
 
     @And("^I select the Back button on the device$")
@@ -201,7 +217,7 @@ public class AppiumAndroidStepdefs {
     public void iSelectPassengerCharterFromTheMenu() throws Throwable {
         MTicket mticket = new MTicket();
         Thread.sleep(5000);
-        driver.findElementByAccessibilityId(mticket.PassengerCharter()).click();
+        driver.findElement(By.id(mticket.PassengerCharter())).click();
     }
 
     @And("^I select Live Travel Updates from the Menu$")
@@ -234,10 +250,10 @@ public class AppiumAndroidStepdefs {
         driver.findElement(By.id(String.valueOf(mticket.Feedback()))).click();
     }
 
-    @And("^I select Delay Repay from the Menu$")
+    @And("^I select Train Mapper from the Menu$")
     public void iSelectDelayRepayFromTheMenu() throws Throwable {
         MTicket mticket = new MTicket();
-        driver.findElement(By.id(String.valueOf(mticket.DelayRepay()))).click();
+        driver.findElement(By.id(String.valueOf(mticket.TrainMapper()))).click();
     }
 
     @And("^I select Live Train Times from the Menu$")

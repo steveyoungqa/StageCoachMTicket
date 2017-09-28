@@ -6,27 +6,27 @@ import java.io.IOException;
 public class MTicket {
 
     public String EmailAddress() throws IOException {
-        return ("sh.dogfi.mticket:id/editEmail");
+        return ("com.virgintrainseastcoast.mticket:id/editEmail");
     }
 
     public String Password() throws IOException {
-        return ("sh.dogfi.mticket:id/editPassword");
+        return ("com.virgintrainseastcoast.mticket:id/editPassword");
     }
 
     public String DeviceName() throws IOException {
-        return ("sh.dogfi.mticket:id/editDeviceName");
+        return ("com.virgintrainseastcoast.mticket:id/editDeviceName");
     }
 
     public String SkipButton() throws IOException {
-        return ("sh.dogfi.mticket:id/btnSkip");
+        return ("com.virgintrainseastcoast.mticket:id/btnSkip");
     }
 
     public String LoginButton() throws IOException {
-        return ("sh.dogfi.mticket:id/btnLogin");
+        return ("com.virgintrainseastcoast.mticket:id/btnLogin");
     }
 
     public String RegisterButton() throws IOException {
-        return ("sh.dogfi.mticket:id/btnRegister");
+        return ("com.virgintrainseastcoast.mticket:id/btnRegister");
     }
 
     public String HamburgerMenu() throws IOException {
@@ -38,19 +38,19 @@ public class MTicket {
     }
 
     public String BuyTickets() throws IOException {
-        return ("sh.dogfi.mticket:id/layoutBuyTickets");
+        return ("com.virgintrainseastcoast.mticket:id/layoutBuyTickets");
     }
 
     public String TicketWallet() throws IOException {
-        return ("sh.dogfi.mticket:id/layoutTicketWallet");
+        return ("com.virgintrainseastcoast.mticket:id/layoutTicketWallet");
     }
 
     public String MyAccount() throws IOException {
-        return ("sh.dogfi.mticket:id/layoutMyAccount");
+        return ("com.virgintrainseastcoast.mticket:id/layoutMyAccount");
     }
 
     public String HelpInfo() throws IOException {
-        return ("sh.dogfi.mticket:id/layoutHelpInfo");
+        return ("com.virgintrainseastcoast.mticket:id/layoutLiveUpdates");
     }
 
     public String Home() throws IOException {
@@ -85,8 +85,8 @@ public class MTicket {
         return ("Feedback");
     }
 
-    public String DelayRepay() throws IOException {
-        return ("AWAITING RESOURCE-ID");
+    public String TrainMapper() throws IOException {
+        return ("Train mapper");
     }
 
     public String LiveTrainTimes() throws IOException {

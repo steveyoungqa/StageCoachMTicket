@@ -28,7 +28,7 @@ public class Driver {
             if (webdriver == null) {
 
                 if (browser.equals("Chrome")) {
-
+                System.setProperty("webdriver.chrome.driver", "/Users/steveyoung/Documents/Repos/stagecoach-mticket-automation/selenium/chromedriverOSX");
                     webdriver = new ChromeDriver();
                 }
                 if (browser.equals("Firefox")) {

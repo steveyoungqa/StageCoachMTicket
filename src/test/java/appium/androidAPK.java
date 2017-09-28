@@ -73,8 +73,8 @@ public class androidAPK {
         registerButton.click();
     }
 
-    @AfterClass
-    public void tearDown(){
-        driver.closeApp();
-    }
+//    @AfterClass
+//    public void tearDown(){
+//        driver.closeApp();
+//    }
 }
